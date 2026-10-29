@@ -1,0 +1,26 @@
+{
+  "name": "task-management-system",
+  "version": "1.0.0",
+  "description": "智能任务管理系统 - Node.js + Express + Supabase",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "task",
+    "todo",
+    "management",
+    "supabase",
+    "express"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

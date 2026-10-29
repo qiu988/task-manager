@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能任务管理系统</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 6h6M9 12h6M9 18h6" />
+            <path d="M3 4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" />
+            <path d="M9 4v16" />
+          </svg>
+        </div>
+        <div>
+          <h1>任务管理</h1>
+          <p class="subtitle">高效管理你的待办事项</p>
+        </div>
+      </header>
+
+      <!-- 添加任务 -->
+      <section class="card add-card">
+        <h2>添加任务</h2>
+        <form id="add-form" class="add-form">
+          <input
+            id="task-title"
+            type="text"
+            placeholder="输入任务标题..."
+            maxlength="255"
+            autocomplete="off"
+          />
+          <select id="task-priority" aria-label="优先级">
+            <option value="high">高优先级</option>
+            <option value="medium" selected>中优先级</option>
+            <option value="low">低优先级</option>
+          </select>
+          <button type="submit" class="btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5v14" />
+            </svg>
+            添加
+          </button>
+        </form>
+      </section>
+
+      <!-- 任务列表 -->
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>任务列表</h2>
+          <div class="filters" role="group" aria-label="按优先级筛选">
+            <button class="filter active" data-filter="all">全部</button>
+            <button class="filter" data-filter="high">高</button>
+            <button class="filter" data-filter="medium">中</button>
+            <button class="filter" data-filter="low">低</button>
+          </div>
+        </div>
+
+        <div id="task-list" class="task-list">
+          <p class="empty">加载中...</p>
+        </div>
+      </section>
+
+      <footer class="footer">任务数据存储于 Supabase PostgreSQL</footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
